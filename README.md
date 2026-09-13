@@ -1,7 +1,7 @@
 # SOAP Reset Time
 
-**从一线 SOAP 信封里，把无线单元的「复活」拆成可度量的因果链。**  
-**Recover the causal chain of a radio unit’s resurrection from a stream of one-line SOAP envelopes.**
+**从SOAP 消息里，把无线单元的各个模块「重置时间」拆成可度量的因果链。**  
+**From SOAP messages, break each radio-unit module’s reset time into a measurable causal chain.**
 
 > 复位不是一个点，而是一段被协议自己写下的历史。  
 > A reset is not a point in time. It is a history the protocol already wrote down.
