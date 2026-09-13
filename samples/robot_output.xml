@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20210617 03:16:48.000" generator="sample">
+  <suite name="Sample Suite">
+    <test name="RU_Reset">
+      <kw name="Reset RU">
+        <status status="PASS" starttime="20210617 03:16:48.000" endtime="20210617 03:16:53.000"/>
+      </kw>
+      <kw name="Wait Until RU Online">
+        <status status="PASS" starttime="20210617 03:16:53.000" endtime="20210617 03:17:33.000"/>
+      </kw>
+      <kw name="Wait Until On Air">
+        <status status="PASS" starttime="20210617 03:17:33.000" endtime="20210617 03:17:53.000"/>
+      </kw>
+      <status status="PASS" starttime="20210617 03:16:48.000" endtime="20210617 03:17:53.000"/>
+    </test>
+    <test name="Lock_RU">
+      <kw name="Unlock RU">
+        <status status="PASS" starttime="20210617 03:18:00.000" endtime="20210617 03:18:03.000"/>
+      </kw>
+      <kw name="Wait Until On Air">
+        <status status="PASS" starttime="20210617 03:18:03.000" endtime="20210617 03:18:13.000"/>
+      </kw>
+      <status status="PASS" starttime="20210617 03:18:00.000" endtime="20210617 03:18:13.000"/>
+    </test>
+    <test name="Lock_Cell">
+      <kw name="Unlock Cell">
+        <status status="PASS" starttime="20210617 03:18:20.000" endtime="20210617 03:18:22.000"/>
+      </kw>
+      <kw name="Wait Until On Air">
+        <status status="PASS" starttime="20210617 03:18:22.000" endtime="20210617 03:18:32.000"/>
+      </kw>
+      <status status="PASS" starttime="20210617 03:18:20.000" endtime="20210617 03:18:32.000"/>
+    </test>
+    <status status="PASS" starttime="20210617 03:16:48.000" endtime="20210617 03:18:32.000"/>
+  </suite>
+  <statistics>
+    <suite>
+      <stat name="Sample Suite" pass="3" fail="0"/>
+    </suite>
+  </statistics>
+  <errors/>
+  <kw name="Log">
+    <msg>RRU_PRODUCT_NAME=SAMPLE_RU</msg>
+    <msg>BBU_SW_VERSION=BBU-SAMPLE-1.0</msg>
+    <msg>RU_SW_VERSION=RFSW-SAMPLE-1.0</msg>
+    <msg>soap_parser_result=[{'PTP sync time between RU and DU': 22}, {'Radio data path sync time': 32}]</msg>
+  </kw>
+</robot>

@@ -1,0 +1,35 @@
+{
+  "keyword_timings": {
+    "rru_reset_detected": {
+      "keyword": "Reset RU",
+      "case": "RU_Reset"
+    },
+    "rru_reset_enable": {
+      "keyword": "Wait Until RU Online",
+      "case": "RU_Reset"
+    },
+    "rru_reset_onair": {
+      "keyword": "Wait Until On Air",
+      "case": "RU_Reset",
+      "after": "Wait Until RU Online"
+    },
+    "rru_unlock": {
+      "keyword": "Unlock RU",
+      "case": "Lock_RU"
+    },
+    "rru_unlock_onair": {
+      "keyword": "Wait Until On Air",
+      "case": "Lock_RU",
+      "after": "Unlock RU"
+    },
+    "cell_unlock": {
+      "keyword": "Unlock Cell",
+      "case": "Lock_Cell"
+    },
+    "cell_unlock_onair": {
+      "keyword": "Wait Until On Air",
+      "case": "Lock_Cell",
+      "after": "Unlock Cell"
+    }
+  }
+}

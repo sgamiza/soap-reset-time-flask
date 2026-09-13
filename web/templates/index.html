@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reset Time</title>
+  <style>
+    :root { color-scheme: light; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #f4f6fb;
+      color: #1d2433;
+    }
+    header {
+      background: #17324d;
+      color: #fff;
+      padding: 1.2rem 1.5rem;
+    }
+    h1 { margin: 0 0 .35rem; font-size: 1.4rem; }
+    header p { margin: 0; opacity: .85; font-size: .9rem; }
+    main { padding: 1.25rem; }
+    .banner {
+      background: #e8f3ff;
+      border: 1px solid #c5ddf5;
+      padding: .75rem 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(23, 50, 77, .08);
+    }
+    th, td {
+      padding: .65rem .7rem;
+      text-align: left;
+      font-size: .85rem;
+      border-bottom: 1px solid #edf1f6;
+      white-space: nowrap;
+    }
+    th { background: #f0f4f8; font-weight: 600; }
+    tr:hover td { background: #f8fbff; }
+    .empty { padding: 2rem; text-align: center; color: #5b6b7c; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Reset time</h1>
+    <p>RU reset and SOAP OAM carrier timings, averaged by software version.</p>
+  </header>
+  <main>
+    {% if demo %}
+    <div class="banner">Demo mode uses the bundled SQLite database. Point <code>RESET_TIME_DB_BACKEND=mysql</code> at your own schema to use live reports.</div>
+    {% endif %}
+    {% if rows %}
+    <table>
+      <thead>
+        <tr>
+          {% for column in columns %}
+          <th>{{ column }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          {% for column in columns %}
+          <td>{{ row.get(column, "") }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <div class="empty">No rows with <code>rru_reset_detected &gt; 0</code>.</div>
+    {% endif %}
+  </main>
+</body>
+</html>

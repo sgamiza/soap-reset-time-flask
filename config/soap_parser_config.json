@@ -1,0 +1,244 @@
+{
+  "PTP sync time between RU and DU": {
+    "column": "ptp_sync",
+    "start": {
+      "xml_tag_name": "moduleReadyAck",
+      "msg_from": "BTS",
+      "msg_to": "RU"
+    },
+    "end": {
+      "xml_tag_name": "managedObject",
+      "msg_from": "RU",
+      "msg_to": "BTS",
+      "xml_tag_attrib": {
+        "class": "PtpStatus",
+        "distName": "ptpStatus"
+      },
+      "managed_parameter_change": {
+        "parameterName": "lockState",
+        "newValue": "LOCKED"
+      },
+      "should_contain_list": ["update_parm"]
+    }
+  },
+  "Radio data path sync time": {
+    "column": "path_sync",
+    "start": {
+      "xml_tag_name": "moduleReadyAck",
+      "msg_from": "BTS",
+      "msg_to": "RU"
+    },
+    "end": {
+      "xml_tag_name": "managedObject",
+      "msg_from": "RU",
+      "msg_to": "BTS",
+      "xml_tag_attrib": {
+        "class": "Synchronization",
+        "distName": "synchronization"
+      },
+      "managed_parameter_change": {
+        "parameterName": "state",
+        "newValue": "LOCKED",
+        "prevValue": "FREERUN"
+      },
+      "should_contain_list": ["update_parm"],
+      "check_status": true
+    }
+  },
+  "Tx Carrier setup time in radio": {
+    "column": "tx_setup",
+    "start": {
+      "xml_tag_name": "managedObject",
+      "msg_from": "BTS",
+      "msg_to": "RU",
+      "xml_tag_attrib": {
+        "class": "TxArrayCarrier",
+        "distName": "NR"
+      },
+      "managed_parameter_change": {
+        "parameterName": "active",
+        "newValue": "FALSE"
+      },
+      "should_contain_list": ["create_mo"]
+    },
+    "end": {
+      "xml_tag_name": "managedObject",
+      "msg_from": "RU",
+      "msg_to": "BTS",
+      "xml_tag_attrib": {
+        "class": "TxArrayCarrier",
+        "distName": "NR"
+      },
+      "managed_parameter_change": {
+        "parameterName": "active",
+        "newValue": "FALSE"
+      },
+      "should_contain_list": ["create_mo", "subscribe"],
+      "check_status": true
+    }
+  },
+  "Tx Carrier activate time in radio": {
+    "column": "tx_activate",
+    "start": {
+      "xml_tag_name": "managedObject",
+      "msg_from": "BTS",
+      "msg_to": "RU",
+      "xml_tag_attrib": {
+        "class": "TxArrayCarrier",
+        "distName": "NR"
+      },
+      "managed_parameter_change": {
+        "parameterName": "active",
+        "newValue": "TRUE"
+      },
+      "should_contain_list": ["update_parm"]
+    },
+    "end": {
+      "xml_tag_name": "managedObject",
+      "msg_from": "RU",
+      "msg_to": "BTS",
+      "xml_tag_attrib": {
+        "class": "TxArrayCarrier",
+        "distName": "NR"
+      },
+      "managed_parameter_change": {
+        "parameterName": "active",
+        "newValue": "TRUE",
+        "prevValue": "FALSE"
+      },
+      "should_contain_list": ["update_parm"],
+      "check_status": true
+    }
+  },
+  "Rx Carrier setup time in radio": {
+    "column": "rx_setup",
+    "start": {
+      "xml_tag_name": "managedObject",
+      "msg_from": "BTS",
+      "msg_to": "RU",
+      "xml_tag_attrib": {
+        "class": "RxArrayCarrier",
+        "distName": "NR"
+      },
+      "managed_parameter_change": {
+        "parameterName": "active",
+        "newValue": "FALSE"
+      },
+      "should_contain_list": ["create_mo"]
+    },
+    "end": {
+      "xml_tag_name": "managedObject",
+      "msg_from": "RU",
+      "msg_to": "BTS",
+      "xml_tag_attrib": {
+        "class": "RxArrayCarrier",
+        "distName": "NR"
+      },
+      "managed_parameter_change": {
+        "parameterName": "active",
+        "newValue": "FALSE"
+      },
+      "should_contain_list": ["create_mo", "subscribe"],
+      "check_status": true
+    }
+  },
+  "Rx Carrier activate time in radio": {
+    "column": "rx_activate",
+    "start": {
+      "xml_tag_name": "managedObject",
+      "msg_from": "BTS",
+      "msg_to": "RU",
+      "xml_tag_attrib": {
+        "class": "RxArrayCarrier",
+        "distName": "NR"
+      },
+      "managed_parameter_change": {
+        "parameterName": "active",
+        "newValue": "TRUE"
+      },
+      "should_contain_list": ["update_parm"]
+    },
+    "end": {
+      "xml_tag_name": "managedObject",
+      "msg_from": "RU",
+      "msg_to": "BTS",
+      "xml_tag_attrib": {
+        "class": "RxArrayCarrier",
+        "distName": "NR"
+      },
+      "managed_parameter_change": {
+        "parameterName": "active",
+        "newValue": "TRUE",
+        "prevValue": "FALSE"
+      },
+      "should_contain_list": ["update_parm"],
+      "check_status": true
+    }
+  },
+  "Tx Carrier deactivate time in radio": {
+    "column": "tx_deact",
+    "start": {
+      "xml_tag_name": "managedObject",
+      "msg_from": "BTS",
+      "msg_to": "RU",
+      "xml_tag_attrib": {
+        "class": "TxArrayCarrier",
+        "distName": "NR"
+      },
+      "managed_parameter_change": {
+        "parameterName": "active",
+        "newValue": "FALSE"
+      },
+      "should_contain_list": ["update_parm"]
+    },
+    "end": {
+      "xml_tag_name": "managedObject",
+      "msg_from": "RU",
+      "msg_to": "BTS",
+      "xml_tag_attrib": {
+        "class": "TxArrayCarrier",
+        "distName": "NR"
+      },
+      "managed_parameter_change": {
+        "parameterName": "state",
+        "newValue": "DISABLED",
+        "prevValue": "READY"
+      },
+      "should_contain_list": ["update_parm", "active"],
+      "check_status": true
+    }
+  },
+  "Rx Carrier deactivate time in radio": {
+    "column": "rx_deact",
+    "start": {
+      "xml_tag_name": "managedObject",
+      "msg_from": "BTS",
+      "msg_to": "RU",
+      "xml_tag_attrib": {
+        "class": "RxArrayCarrier",
+        "distName": "NR"
+      },
+      "managed_parameter_change": {
+        "parameterName": "active",
+        "newValue": "FALSE"
+      },
+      "should_contain_list": ["update_parm"]
+    },
+    "end": {
+      "xml_tag_name": "managedObject",
+      "msg_from": "RU",
+      "msg_to": "BTS",
+      "xml_tag_attrib": {
+        "class": "RxArrayCarrier",
+        "distName": "NR"
+      },
+      "managed_parameter_change": {
+        "parameterName": "state",
+        "newValue": "DISABLED",
+        "prevValue": "READY"
+      },
+      "should_contain_list": ["update_parm", "active"],
+      "check_status": true
+    }
+  }
+}

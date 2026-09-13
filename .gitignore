@@ -1,0 +1,34 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+data/
+*.log
+*.db
+*.sqlite
+*.sqlite3
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+.commitmsg.txt
+
+# Local Chinese notes for AI / this machine — not on GitHub
+README.local.md
+README.LOCAL.md
+版本记录.md
+
+# Lab artifacts that must stay local
+*.xml.gz
+rflog*.zip
+historyxml/
+output/
+logs/
